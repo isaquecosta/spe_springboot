@@ -24,7 +24,10 @@ docker-compose -f docker-compose-dev.yml up -d
 Os containers serão montados e estarão prontos.
 
 Serviços:
-Os serviços são compilados com o maven:
+Os serviços são compilados com o maven.
+execute:
+mvn clean install
+e em seguida:
 mvn spring-boot:run
 
 Cliente:

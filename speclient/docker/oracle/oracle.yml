@@ -1,0 +1,14 @@
+version: "2"
+services:
+  pecg-oracle:
+    image: pecg/oracle:11g
+    build:
+      context: .
+    environment:
+      ORACLE_ALLOW_REMOTE: "true"
+      LANG: "pt_BR.UTF-8"
+      LANGUAGE: "pt_BR:pt"
+      TZ: "Amercia/Sao_Paulo"
+      NLS_LANG: "BRAZILIAN PORTUGUESE_BRAZIL.AL32UTF8"
+    ports:
+      - "1521:1521"

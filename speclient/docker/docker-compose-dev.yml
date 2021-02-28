@@ -1,0 +1,22 @@
+version: '2'
+services:
+  pecg-registry:
+    extends:
+      file: jhipster-registry.yml
+      service: jhipster-registry
+    container_name: pecg-jhipster-registry
+  pecg-oracle:
+    extends:
+      file: oracle/oracle.yml
+      service: pecg-oracle
+    container_name: pecg-oracle
+  redis:
+    extends:
+      file: redis.yml
+      service: redis
+    container_name: pecg-redis
+  elasticsearch:
+    extends:
+      file: elasticsearch.yml
+      service: pecg-elasticsearch
+    container_name: pecg-elasticsearch

@@ -6,7 +6,7 @@
     (click)="onLayoutClick()">
     <div #layoutContainer
         class="layout-container"
-        [ngClass]="{
+        [ngClass]="{ 
             'menu-layout-static': !menuService.isOverlay(),
             'menu-layout-overlay': menuService.isOverlay(),
             'menu-layout-slim': menuService.isSlim(),

@@ -4,6 +4,8 @@ import { FormProfissionalComponent } from './form-profissional/form-profissional
 import { ListarProfissionalComponent } from './listar-profissional/listar-profissional.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ProfissionalRoutingModule } from './profissional-routing.module';
+import { CardAdicionarModule } from 'src/app/components/card-adicionar/card-adicionar.module';
+import { ProfissionalService } from 'src/app/shared/service/profissional.service';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,11 @@ import { ProfissionalRoutingModule } from './profissional-routing.module';
   imports: [
     CommonModule,
     SharedModule,
-    ProfissionalRoutingModule
+    ProfissionalRoutingModule,
+    CardAdicionarModule
+  ],
+  providers: [
+    ProfissionalService
   ]
 })
 export class ProfissionalModule { }

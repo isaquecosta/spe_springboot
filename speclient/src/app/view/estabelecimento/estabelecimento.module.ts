@@ -4,6 +4,8 @@ import { ListarEstabelecimentoComponent } from './listar-estabelecimento/listar-
 import { FormEstabelecimentoComponent } from './form-estabelecimento/form-estabelecimento.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { EstabelecimentoRoutingModule } from './estabelecimento-routing.module';
+import { CardAdicionarModule } from 'src/app/components/card-adicionar/card-adicionar.module';
+import { EstabelecimentoService } from 'src/app/shared/service/estabelecimento.service';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,11 @@ import { EstabelecimentoRoutingModule } from './estabelecimento-routing.module';
   imports: [
     CommonModule,
     SharedModule,
-    EstabelecimentoRoutingModule
+    EstabelecimentoRoutingModule,
+    CardAdicionarModule
+  ],
+  providers:[
+    EstabelecimentoService
   ]
 })
 export class EstabelecimentoModule { }

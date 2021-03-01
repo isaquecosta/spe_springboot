@@ -1,49 +1,12 @@
-<div class="topbar clearfix">
+    <div class="topbar clearfix">
     <div class="topbar-left">
-        <div class="logo">
-        </div>
-    </div>
-    <div class="topbar-right">
-        <a id="menu-button" href="#" (click)="app.onMenuButtonClick($event)">
-            <i></i>
+        <a id="topbar-menu-button" class="nav-form" href="#" (click)="app.onMenuButtonClick($event)">
+            <svg id="menu-form" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 33.999 30">
+                <rect id="ret1" width="33.999" height="4.286" fill="#565656"></rect>
+                <rect id="ret2" width="33.999" height="4.286" transform="translate(0 12.857)" fill="#565656"></rect>
+                <rect id="ret3" width="21.249" height="4.286" transform="translate(0 25.714)" fill="#565656"></rect>
+            </svg>
         </a>
-        <a id="topbar-menu-button" href="#" (click)="app.onTopbarMenuButtonClick($event)">
-            <i class="material-icons">menu</i>
-        </a>
-        <ul class="topbar-items animated fadeInDown" [ngClass]="{'topbar-items-visible': app.topbarMenuActive}">
-            <li #settings [ngClass]="{'active-top-menu':app.activeTopbarItem === settings}">
-                <a href="#" (click)="app.onTopbarItemClick($event,settings)">
-                    <i class="topbar-icon material-icons">settings</i>
-                    <span class="topbar-item-name">Settings</span>
-                </a>
-                <ul class="ultima-menu animated fadeInDown">
-                    <li role="menuitem">
-                        <a routerLink="/diario-erros">
-                            <i class="material-icons">error</i>
-                            <span>Diário de Erros</span>
-                        </a>
-                    </li>
-                    <li role="menuitem">
-                        <a logout>
-                            <i class="material-icons">power_settings_new</i>
-                            <span>Sair</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li #user [ngClass]="{'active-top-menu':app.activeTopbarItem === user}" *ngIf="isAuthenticated">
-                <a href="#" (click)="app.onTopbarItemClick($event,user)">
-                    <i class="topbar-icon material-icons">person</i>
-                    <span class="topbar-item-name">Usuário</span>
-                </a>
-                <ul class="ultima-menu animated fadeInDown">
-                    <li role="menuitem">
-                        <a>
-                            <span user><strong>Usuário: </strong></span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
+        <div class="logo"></div>
     </div>
 </div>

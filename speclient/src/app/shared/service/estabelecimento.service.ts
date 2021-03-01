@@ -11,7 +11,7 @@ import { Estabelecimento } from 'src/app/domain/estabelecimento';
 @Injectable()
 export class EstabelecimentoService{
 
-  resourceUrl = environment.apiAcessoService + '/estabelecimento';
+  resourceUrl = environment.apiAcessoService + '/estabelecimentos';
 
   constructor(private httpClient: HttpClient) { }
 

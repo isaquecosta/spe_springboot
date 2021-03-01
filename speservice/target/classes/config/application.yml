@@ -31,4 +31,4 @@ spring:
         change-log: classpath:/db/master.xml
 #        drop-first: true
 server:
-    port: 8080
+    port: 8081

@@ -33,7 +33,7 @@ export class ListarEstabelecimentoComponent extends BaseController implements On
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
+    private route: ActivatedRoute,  
     private estabelecimentoService: EstabelecimentoService,
     private confirmationService: ConfirmationService,
     messageService: MessageService) {

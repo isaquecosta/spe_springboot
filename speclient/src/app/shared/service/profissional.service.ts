@@ -11,7 +11,7 @@ import { RequestUtil } from 'src/app/util/request-util';
 @Injectable()
 export class ProfissionalService{
 
-  resourceUrl = environment.apiAcessoService + '/profissional';
+  resourceUrl = environment.apiAcessoService + '/profissionais';
 
   constructor(private httpClient: HttpClient) { }
 

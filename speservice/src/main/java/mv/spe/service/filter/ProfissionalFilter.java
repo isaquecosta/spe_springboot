@@ -13,11 +13,6 @@ public class ProfissionalFilter implements Serializable {
 
     private String nome;
 
-    private String celular;
-
-    private String telefone;
-
     private String funcao;
 
-    private String endereco;
 }

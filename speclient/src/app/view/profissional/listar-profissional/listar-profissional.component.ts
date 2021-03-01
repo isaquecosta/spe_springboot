@@ -25,6 +25,7 @@ export class ListarProfissionalComponent extends BaseController implements OnIni
   profissionais: Page<Profissional> = new Page;
   travarCarregamentoTabela: boolean;
   exibeDialog = false;
+
   colunas = [
     { field: 'nome', header: 'Nome' },
     { field: 'endereco', header: 'Endereço' },
@@ -58,7 +59,48 @@ export class ListarProfissionalComponent extends BaseController implements OnIni
     }
   }
 
+  excluir(id: number) {
+    this.confirmationService.confirm({
+      message: 'Deseja realmente excluir este item?',
+      acceptLabel: 'Sim',
+      rejectLabel: 'Não',
+      acceptButtonStyleClass: 'ui-button-success',
+      rejectButtonStyleClass: 'ui-button-danger',
+      accept: () => {
+        this.blockUI.start(ConstantsUtil.EXCLUINDO);
+        this.profissionalService.excluir(id)
+          .pipe(finalize(() => this.blockUI.stop()))
+          .subscribe(() => {
+            this.limpar();
+            this.liberaCarregamento();
+            this.montarMsgSucesso(ConstantsUtil.OPERACAO_SUCESSO);
+          },
+            erro => {
+              this.montarMsgAlerta(erro.error.title);
+            });
+      }
+    });
+  }
+
   cadastrar(){
     this.router.navigate(['profissional/cadastrar']);
+  }
+
+  editar(id: number) {
+    this.router.navigate([`/profissional/editar/${id}`]);
+  }
+
+  travarCarregamento(event) {
+    this.travarCarregamentoTabela = event;
+  }
+
+  liberaCarregamento() {
+    this.travarCarregamentoTabela = false;
+    this.listar();
+  }
+
+  limpar(){
+    this.profissional = new Profissional();
+    this.datatable.reset();
   }
 }

@@ -7,6 +7,46 @@
 
         <form #form="ngForm" (ngSubmit)="listar()">
 
+            <div class="p-grid p-jc-between">
+                <div class="p-col-10 p-md-6 p-sm-10">
+                    <div class="box">
+                        <strong>Nome: </strong>
+                        <span class="material-icons info-icon" pTooltip="Insira o Nome"
+                            tooltipPosition="top">info</span>
+                    </div>
+                    <span class="md-inputfield p-text-center">
+                        <input id="nome--profissional" name="nome--profissional" [(ngModel)]="profissional.nome"
+                             class="width-100p" placeholder="Insira o Texto">
+                    </span>
+                </div>
+            </div>
+
+            <div class="p-grid p-jc-between">
+                <div class="p-col-10 p-md-6 p-sm-10">
+                    <div class="box">
+                        <strong>Função: </strong>
+                        <span class="material-icons info-icon" pTooltip="Insira a Função"
+                            tooltipPosition="top">info</span>
+                    </div>
+                    <span class="md-inputfield p-text-center">
+                        <input id="funcao--profissional" name="funcao--profissional" [(ngModel)]="profissional.funcao"
+                             class="width-100p" placeholder="Insira o Texto">
+                    </span>
+                </div>
+            </div>
+
+            <div class="botoesPesquisa">
+                <div class="p-mr-2">
+                    <button class="ui-button-rounded-50 ui-button-success button-success button-responsive"
+                        label="Pesquisar" pButton type="submit" (click)="liberaCarregamento()"></button>
+                </div>
+                <div>
+                    <button (click)="limpar()"
+                        class="ui-button-rounded-50 ui-button-secondary button-cancelar button-responsive"
+                        label="Limpar" pButton type="button" (click)="liberaCarregamento()"></button>
+                </div>
+            </div>
+
             <div class="botaoIncluir">
                 <div class="box">
                     <app-card-adicionar label="Incluir Novo" (click)="cadastrar()"></app-card-adicionar>
@@ -23,7 +63,7 @@
                         <ng-template pTemplate="header">
                             <tr>
                                 <th *ngFor="let col of colunas" [pSortableColumn]="col.field"
-                                    (click)="liberaCarregamento()">
+                                (click)="liberaCarregamento()">
                                     {{col.header}}
                                     <p-sortIcon [field]="col.field" ariaLabel="Ative para ordenar"
                                         ariaLabelAsc="Ative para listar em ordem crescente"
@@ -73,5 +113,4 @@
         </form>
     </div>
 </div>
-<p-confirmDialog header="Excluir" [draggable]="false" icon="pi pi-exclamation-triangle" 
-(travarCarregamento)="travarCarregamento($event)"></p-confirmDialog>
+<p-confirmDialog header="Excluir" [draggable]="false" icon="pi pi-exclamation-triangle"></p-confirmDialog>

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { BaseController } from 'src/app/shared/controller/base-controller';
 import { ConstantsUtil } from 'src/app/util/constants-util';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import { MessageService } from 'primeng';
 import { Profissional } from 'src/app/domain/profissional';
@@ -13,27 +13,30 @@ import { finalize } from 'rxjs/operators';
   templateUrl: './form-profissional.component.html',
   styleUrls: ['./form-profissional.component.css']
 })
-export class FormProfissionalComponent extends BaseController{
+export class FormProfissionalComponent extends BaseController implements OnInit{
 
   profissional= new Profissional();
+
+  @Input() titulo;
 
   @BlockUI() blockUI: NgBlockUI;
 
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private profissionalService: ProfissionalService,
     messageService: MessageService) {
 
     super(messageService);
     }
 
-  
-
+  ngOnInit(){
+    this.verificaIdRota();
+  }
   salvar(form) {
     if (!form.valid) {
       return;
     }
-
     if (this.profissional.id) {
       this.editar();
     } else {
@@ -70,5 +73,34 @@ export class FormProfissionalComponent extends BaseController{
   cancelar(): void {
     window.history.back();
   }
+
+  verificaIdRota(){
+    this.route.params.subscribe((params) => {
+      const id = params['id'];
+      if (id) {
+        this.titulo = 'Edição de Profissional';
+        this.obterPorId(id);
+      }
+      else{
+        this.titulo = 'Cadastro de Profissional'
+      }
+    });
+  }
+
+    obterPorId(id) {
+      this.blockUI.start();
+      this.profissionalService.buscarPorId(id)
+        .pipe(finalize(() => this.blockUI.stop()))
+        .subscribe((response) => {
+          this.preencherModel(response);
+        });
+    }
+
+    private preencherModel(response) {
+      this.profissional = response;
+    }
+  
+  
+
 
 }

@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { HomeComponent } from './home/home.component';
+import { VinculoSpeComponent } from './vinculo-spe/vinculo-spe.component';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    VinculoSpeComponent
   ],
   imports: [
     CommonModule,

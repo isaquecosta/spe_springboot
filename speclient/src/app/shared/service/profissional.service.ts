@@ -9,7 +9,7 @@ import { RequestUtil } from 'src/app/util/request-util';
 
 
 @Injectable()
-export class ProfissionalService{
+export class ProfissionalService {
 
   resourceUrl = environment.apiAcessoService + '/profissionais';
 

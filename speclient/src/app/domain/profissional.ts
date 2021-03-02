@@ -1,8 +1,9 @@
-export class Profissional{
+export class Profissional {
     id: number;
-    nome: string;
-    endereco: string;
-    telefone?: string; 
+    nome = '';
     celular: string;
-    funcao: string;
+    telefone?: string;
+    funcao = '';
+    endereco: string;
+    idEstabelecimentos?: number[];
 }

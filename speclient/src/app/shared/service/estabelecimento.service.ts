@@ -9,7 +9,7 @@ import { Estabelecimento } from 'src/app/domain/estabelecimento';
 
 
 @Injectable()
-export class EstabelecimentoService{
+export class EstabelecimentoService {
 
   resourceUrl = environment.apiAcessoService + '/estabelecimentos';
 
@@ -17,7 +17,7 @@ export class EstabelecimentoService{
 
   listar(estabelecimento: Estabelecimento, datatable: Table): Observable<Page<Estabelecimento>> {
     const vrr = { params: RequestUtil.getRequestParamsTable(datatable) };
-    return this.httpClient.post<Page<Estabelecimento>>(this.resourceUrl + '/listar', Estabelecimento, vrr);
+    return this.httpClient.post<Page<Estabelecimento>>(this.resourceUrl + '/listar', estabelecimento, vrr);
   }
 
   salvar(estabelecimento: Estabelecimento): Observable<Estabelecimento> {

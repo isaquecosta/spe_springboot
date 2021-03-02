@@ -48,7 +48,6 @@ export class ListarProfissionalComponent extends BaseController implements OnIni
   }
 
   listar() {
-    if (!this.travarCarregamentoTabela) {
       this.blockUI.start(ConstantsUtil.BUSCANDO);
       this.profissionalService.listar(this.profissional, this.datatable)
         .pipe(finalize(() => this.blockUI.stop()))
@@ -56,7 +55,6 @@ export class ListarProfissionalComponent extends BaseController implements OnIni
           this.profissionais = response;
         });
       this.travarCarregamentoTabela = true;
-    }
   }
 
   excluir(id: number) {

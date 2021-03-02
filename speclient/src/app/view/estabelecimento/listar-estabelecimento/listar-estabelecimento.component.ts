@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import { ConfirmationService, MessageService, Table } from 'primeng';
 import { Page } from 'src/app/domain/page';
@@ -33,7 +33,6 @@ export class ListarEstabelecimentoComponent extends BaseController implements On
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute,  
     private estabelecimentoService: EstabelecimentoService,
     private confirmationService: ConfirmationService,
     messageService: MessageService) {

@@ -18,7 +18,7 @@ import { EstabelecimentoService } from 'src/app/shared/service/estabelecimento.s
     EstabelecimentoRoutingModule,
     CardAdicionarModule
   ],
-  providers:[
+  providers: [
     EstabelecimentoService
   ]
 })

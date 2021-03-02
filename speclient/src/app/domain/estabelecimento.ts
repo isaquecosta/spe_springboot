@@ -1,6 +1,7 @@
-export class Estabelecimento{
+export class Estabelecimento {
     id: number;
-    nome: string;
-    endereco: string;
+    nome = '';
     telefone: string;
+    endereco: string;
+    idRequisito?: number;
 }

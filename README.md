@@ -18,20 +18,20 @@
 
 ## Compose dos containers
 • Vá na pasta docker e execute:
-[docker-compose -f docker-compose-dev.yml up -d]
+[ docker-compose -f docker-compose-dev.yml up -d ]
 Os containers serão montados e estarão prontos.
 
 ## Serviços:
 • Os serviços são compilados com o maven.
 execute:
-mvn clean install
+[ mvn clean install ] 
 e em seguida:
-mvn spring-boot:run
+[ mvn spring-boot:run ]
 
 ## Cliente:
 • O cliente REST da aplicação é desenvolvido em angular e utiliza a biblioteca do PrimeNG como principal fonte de componentes.
 Vá na pasta do cliente e execute:
-npm install
+[ npm install ]
 e em seguida:
-npm start
+[ npm start ]
 O sistema estará disponível na URL localhost:4200

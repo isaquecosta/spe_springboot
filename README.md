@@ -2,7 +2,7 @@
 • Sistema de Profissionais e Estabelecimentos com Spring Boot
 
 ## Sistema
-• O SPE é um sistema desenvolvido comu Java 8, SpringBoot métodos rest e angular 9
+• O SPE é um sistema desenvolvido com Java 8, SpringBoot métodos rest e angular 9
 
 ## PostgreSQL
 • O banco de dados é o PostgreSQL

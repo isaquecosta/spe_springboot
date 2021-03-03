@@ -6,6 +6,7 @@ import lombok.Setter;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -38,7 +39,7 @@ public class Estabelecimento implements Serializable {
     @Column(name = "NU_ENDERECO", nullable = false)
     private String endereco;
 
-    @ManyToOne(cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "FK_PROFISSIONAL", referencedColumnName = "PK_PROFISSIONAL")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "FK_PROFISSIONAL")
     private Profissional profissional;
 }

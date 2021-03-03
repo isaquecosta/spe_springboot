@@ -3,6 +3,7 @@ package mv.spe.web.rest;
 import lombok.RequiredArgsConstructor;
 import mv.spe.service.EstabelecimentoService;
 import mv.spe.service.dto.EstabelecimentoDTO;
+import mv.spe.service.dto.EstabelecimentoListDTO;
 import mv.spe.service.filter.EstabelecimentoFilter;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -43,11 +44,11 @@ public class EstabelecimentoResource {
         return ResponseEntity.ok(this.service.obterPorId(id));    }
 
     @PostMapping("/listar")
-    public ResponseEntity<Page<EstabelecimentoDTO>> listar(
+    public ResponseEntity<Page<EstabelecimentoListDTO>> listar(
             @RequestBody EstabelecimentoFilter filtro,
             Pageable pageable) {
 
-        Page<EstabelecimentoDTO> page = this.service.listar(filtro, pageable);
+        Page<EstabelecimentoListDTO> page = this.service.listar(filtro, pageable);
         return new ResponseEntity<>(page, HttpStatus.OK);
     }
 

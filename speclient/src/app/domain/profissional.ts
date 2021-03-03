@@ -5,5 +5,5 @@ export class Profissional {
     telefone?: string;
     funcao = '';
     endereco: string;
-    idEstabelecimentos?: number[];
+    idEstabelecimentos: number[] = [];
 }

@@ -3,5 +3,5 @@ export class Estabelecimento {
     nome = '';
     telefone: string;
     endereco: string;
-    idRequisito?: number;
+    idProfissional?: number;
 }

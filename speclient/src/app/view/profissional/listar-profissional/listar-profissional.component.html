@@ -92,6 +92,9 @@
                                 </td>
                                 <td class="text-align-center">
                                     <span class="cursor-pointer margin-right-10p p-mr-1">
+                                        <i (click)="abrirModal(item.id)" class="pi pi-plus"></i>
+                                    </span>
+                                    <span class="cursor-pointer margin-right-10p p-mr-1">
                                         <i (click)="editar(item.id)" class="pi pi-pencil"></i>
                                     </span>
                                     <span class="cursor-pointer">
@@ -113,4 +116,53 @@
         </form>
     </div>
 </div>
+
+<p-dialog [(visible)]="exibeDialog" [closable]="exibeDialog" [draggable]="false" [header]="'Adicionar Estabelecimentos'"
+          [modal]="true" [responsive]="true" [style]="{width: '800px'}" [resizable]="false">
+
+        <form #form="ngForm" (ngSubmit)="salvarAdd()" >
+            <div class="dialog-body p-fluid">
+                <div class="p-col">
+                    <div class="box"> 
+                        <strong>Profissional: </strong>
+                        <h5>{{profissional.nome}}</h5>
+                    </div>
+                </div>
+                <div class="p-col">
+                    <div class="box"> 
+                    <strong>Estabelecimentos: </strong>
+                    <span class="material-icons info-icon" pTooltip="Selecione a Permissão" 
+                        tooltipPosition="top">info</span>
+                    </div>
+                    <div class="p-col-12 p-xl-12 p-lg-12 p-md-12 p-sm-12">
+                        <p-pickList sourceHeader="Não possui" 
+                                            targetHeader="Possui"
+                                            [responsive]="true" 
+                                            [dragdrop]="true" 
+                                            [source]="estabelecimentosSelect"
+                                            [target]="estabelecimentosVaziaSelect" 
+                                            [showSourceControls]="false"
+                                            [showTargetControls]="false">
+
+                                    <ng-template let-item pTemplate="item">
+                                        <div class="ui-helper-clearfix">
+                                            <div>{{item.label}}</div>
+                                        </div>
+                                    </ng-template>
+
+                        </p-pickList>
+                    </div>
+                </div> 
+            </div>
+            <div class="botoes">
+                <div>
+                    <button label="Salvar"
+                        class="ui-button-rounded-50 ui-button-success button-success button-responsive p-ml-2" pButton
+                        type="submit"></button>
+                </div>
+            </div>
+        </form>
+</p-dialog>
 <p-confirmDialog header="Excluir" [draggable]="false" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+
+

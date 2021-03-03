@@ -6,6 +6,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ProfissionalRoutingModule } from './profissional-routing.module';
 import { CardAdicionarModule } from 'src/app/components/card-adicionar/card-adicionar.module';
 import { ProfissionalService } from 'src/app/shared/service/profissional.service';
+import { EstabelecimentoService } from 'src/app/shared/service/estabelecimento.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ProfissionalService } from 'src/app/shared/service/profissional.service
     CardAdicionarModule
   ],
   providers: [
-    ProfissionalService
+    ProfissionalService,
+    EstabelecimentoService
   ]
 })
 export class ProfissionalModule { }

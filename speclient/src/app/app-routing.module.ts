@@ -1,15 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginSuccessComponent } from '@nuvem/angular-base';
-import { HomeModule } from './view/dashboard/dashboard.module';
 import { EstabelecimentoModule } from './view/estabelecimento/estabelecimento.module';
 import { ProfissionalModule } from './view/profissional/profissional.module';
 const routes: Routes = [
     { path: 'login-success', component: LoginSuccessComponent },
-    {
-      path: '',
-      loadChildren: () => HomeModule
-    },
     {
       path: 'estabelecimento',
       loadChildren: () => EstabelecimentoModule

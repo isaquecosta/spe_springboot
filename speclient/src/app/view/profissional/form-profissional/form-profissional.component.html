@@ -7,7 +7,7 @@
         <p-toast key="tl" position="top-left"></p-toast>
 
         <form #form="ngForm" (ngSubmit)="salvar(form)">
-            <div>
+            <div class="p-grid">
                 <div class="p-col-12 p-md-4 p-sm-12">
                     <div class="box">
                         <strong>Nome: </strong>
@@ -27,7 +27,8 @@
 
                     </span>
                 </div>
-
+            </div>
+            <div class="p-grid">
                 <div class="p-col-12 p-md-4 p-sm-12">
                     <div class="box">
                         <strong>Endereço: </strong>
@@ -46,7 +47,8 @@
                         class="ui-message ui-messages-error">O campo 'Endereço' é de preenchimento obrigatório</div>
                     </span>
                 </div>
-
+            </div>
+            <div class="p-grid">
                 <div class="p-col-12 p-md-2 p-sm-12">
                     <div class="box">
                         <strong>Celular: </strong>
@@ -67,7 +69,7 @@
                     </span>
                 </div>
                 
-                <div class="p-col-12 p-md-2 p-sm-12 p-mt-3">
+                <div class="p-col-12 p-md-2 p-sm-12 ">
                     <div class="box">
                         <strong>Telefone: </strong>
                         <span class="material-icons info-icon" pTooltip="Digite o Telefone Residencial"
@@ -80,7 +82,8 @@
                             placeholder="+xx (xx) xxxxx-xxxx" unmask="true"></p-inputMask>
                     </span>
                 </div>
-            
+            </div>
+            <div class="p-grid">
                 <div class="p-col-12 p-md-4 p-sm-12">
                     <div class="box">
                         <strong>Função: </strong>

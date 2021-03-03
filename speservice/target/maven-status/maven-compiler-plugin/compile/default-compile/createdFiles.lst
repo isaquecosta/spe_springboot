@@ -3,6 +3,7 @@ mv/spe/service/filter/EstabelecimentoFilter.class
 mv/spe/service/mapper/EstabelecimentoMapperImpl.class
 mv/spe/service/dto/ProfissionalListDTO.class
 mv/spe/repository/ProfissionalRepository.class
+mv/spe/service/dto/EstabelecimentoListDTO.class
 mv/spe/service/EstabelecimentoService.class
 mv/spe/service/mapper/ProfissionalMapper.class
 mv/spe/domain/Estabelecimento.class

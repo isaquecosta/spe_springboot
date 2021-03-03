@@ -148,17 +148,6 @@ export class ListarProfissionalComponent extends BaseController implements OnIni
         });
 }
 
-  editarP() {
-    this.profissionalService.editar(this.profissional)
-      .pipe(finalize(() => this.blockUI.stop()))
-      .subscribe(() => {
-          this.router.navigate(['/profissional/listar']);
-          this.montarMsgSucesso(ConstantsUtil.OPERACAO_SUCESSO);
-        },
-        erro => {
-          this.montarMsgAlerta(erro.error.detail);
-        });
-}
 
   salvarAdd() {
     console.log(this.estabelecimentosVaziaSelect.length);
@@ -170,7 +159,6 @@ export class ListarProfissionalComponent extends BaseController implements OnIni
       this.estabelecimento.idProfissional = this.profissional.id;
       this.editarE();
     });
-    this.profissionalService.editar(this.profissional);
     this.limpar();
     this.montarMsgSucesso(ConstantsUtil.OPERACAO_SUCESSO);
   }
@@ -181,7 +169,7 @@ export class ListarProfissionalComponent extends BaseController implements OnIni
   }
 
   private preencherModelEstab(response) {
-    this.profissional = response;
+    this.estabelecimento = response;
   }
 
   fecharModal() {

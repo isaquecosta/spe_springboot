@@ -13,7 +13,8 @@
 ## Acessoservice
 • É o serviço responsável por gerenciar profissionais, estabelecimentos, solicitações de acesso e permissões.
 
-## Ambiente de desenvolvimento
+
+# Ambiente de desenvolvimento
 
 ## Compose dos containers
 • Vá na pasta docker e execute:

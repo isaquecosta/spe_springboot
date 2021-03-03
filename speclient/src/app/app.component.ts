@@ -18,10 +18,6 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
 
     topbarMenuActive: boolean;
 
-    rightPanelActive: boolean;
-
-    rightPanelClick: boolean;
-
     layoutContainer: HTMLDivElement;
 
     layoutMenuScroller: HTMLDivElement;
@@ -50,7 +46,17 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
         this.zone.runOutsideAngular(() => { this.bindRipple(); });
 
         this.menuService.itens = [
-            { label: 'Dashboard', icon: 'dashboard', routerLink: ['/'] }
+            { label: 'Dashboard', icon: 'dashboard', routerLink: ['/'] },
+            { label: 'Perfil', icon: 'security', items: [
+                { label: 'Lista de perfis', icon: 'list', routerLink: ['/perfis'] },
+            ]},
+            { label: 'Usuário', icon: 'account_circle', items: [
+                { label: 'Cadastrar', icon: 'person_add', routerLink: ['/usuarios/cadastrar'] },
+                { label: 'Cadastros Pendentes', icon: 'folder_shared', routerLink: ['/usuarios/pendentes'] }
+            ]},
+            { label: 'IES', icon: 'account_balance', items: [
+                { label: 'Lista de IES Pendentes', icon: 'list', routerLink: ['/ies/pendentes'] }
+            ]}
         ];
     }
 
@@ -186,13 +192,8 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
             this.menuService.menuHoverActive = false;
         }
 
-        if (!this.rightPanelClick) {
-            this.rightPanelActive = false;
-        }
-
         this.topbarItemClick = false;
         this.menuClick = false;
-        this.rightPanelClick = false;
     }
 
     onMenuButtonClick(event) {
@@ -241,16 +242,6 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
 
     onTopbarSubItemClick(event) {
         event.preventDefault();
-    }
-
-    onRightPanelButtonClick(event) {
-        this.rightPanelClick = true;
-        this.rightPanelActive = !this.rightPanelActive;
-        event.preventDefault();
-    }
-
-    onRightPanelClick() {
-        this.rightPanelClick = true;
     }
 
     hideOverlayMenu() {

@@ -30,4 +30,6 @@ public class EstabelecimentoDTO implements Serializable {
     @NotNull
     @Size(max = 100)
     private String endereco;
+
+    private Long idProfissional;
 }

@@ -6,9 +6,9 @@ import mv.spe.domain.Estabelecimento;
 import mv.spe.domain.Profissional;
 import mv.spe.repository.EstabelecimentoRepository;
 import mv.spe.service.dto.EstabelecimentoDTO;
-import mv.spe.service.dto.ProfissionalDTO;
 import mv.spe.service.filter.EstabelecimentoFilter;
 import mv.spe.service.mapper.EstabelecimentoMapper;
+import mv.spe.service.mapper.ProfissionalMapper;
 import mv.spe.service.util.ConstantsUtil;
 import mv.spe.service.util.MethodUtil;
 import org.springframework.data.domain.Page;
@@ -26,6 +26,8 @@ import java.util.Objects;
 public class EstabelecimentoService {
 
     private final EstabelecimentoMapper mapper;
+
+    private final ProfissionalService profissionalService;
 
     private final EstabelecimentoRepository repository;
 
@@ -57,6 +59,13 @@ public class EstabelecimentoService {
     }
 
     private EstabelecimentoDTO salvar(EstabelecimentoDTO dto) {
+
+        if (Objects.nonNull(dto.getIdProfissional())) {
+            Profissional entidade = this.profissionalService.consultarPorId(dto.getIdProfissional());
+            Estabelecimento salvo = this.mapper.toEntity(dto);
+            salvo.setProfissional(entidade);
+            this.repository.save(salvo);
+        }
 
         this.repository.save(this.mapper.toEntity(dto));
 

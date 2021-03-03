@@ -8,9 +8,9 @@
 • O banco de dados ORM da solução é o PostgreSQL
 
 ## Serviços
-• Os serviços da solução são APIs REST utilizadas para consumo e geração de dados dentro dos modelos. Todas as regras negociais são controladas por eles.
+• Os serviços da solução são APIs REST utilizadas para consumo e geração de dados dentro dos modelos. 
 
-## Acessoservice
+## Speservice
 • É o serviço responsável por gerenciar profissionais, estabelecimentos, solicitações de acesso e permissões.
 
 
@@ -22,14 +22,14 @@
 Os containers serão montados e estarão prontos.
 
 ## Serviços:
-Os serviços são compilados com o maven.
+• Os serviços são compilados com o maven.
 execute:
 mvn clean install
 e em seguida:
 mvn spring-boot:run
 
 ## Cliente:
-O cliente REST da aplicação é desenvolvido em angular e utiliza a biblioteca do PrimeNG como principal fonte de componentes.
+• O cliente REST da aplicação é desenvolvido em angular e utiliza a biblioteca do PrimeNG como principal fonte de componentes.
 Vá na pasta do cliente e execute:
 npm install
 e em seguida:

@@ -5,7 +5,7 @@
 • O SPE é um sistema desenvolvido comu Java 8, SpringBoot métodos rest e angular 9
 
 ## PostgreSQL
-• O banco de dados ORM da solução é o PostgreSQL
+• O banco de dados é o PostgreSQL
 
 ## Serviços
 • Os serviços da solução são APIs REST utilizadas para consumo e geração de dados dentro dos modelos. 
